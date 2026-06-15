@@ -13,10 +13,10 @@ function fun1(){
     document.getElementById("preciolav").value = disabled="off";
 
     
-    document.querySelector("#pmostrar").innerHTML="LAVANDINA_$"+ precio +"="+litros+"ml";
+    document.querySelector("#pmostrar").innerHTML="LAVANDINA_$"+ precio +"="+litros+"ml_";
     
   
-    document.getElementById("input-actor").value = "LAVANDINA_$"+ precio +"="+ litros+ "ml";
+    document.getElementById("input-actor").value = "LAVANDINA__$"+ precio +"="+ litros+ "ml";
     document.getElementById("mensaje1").value = precio+" "+litros;
 }
 function lav500(){
@@ -86,7 +86,7 @@ function fun12(){
     document.querySelector("#pmostrar").innerHTML="LAVANDINA $"+ precio +" x "+litros;
     
   
-    document.getElementById("input-actor").value = "LAVANDINA_"+ litros +"ml=$"+ precio;
+    document.getElementById("input-actor").value = "LAVANDINA___"+ litros +"ml=$"+ precio;
     document.getElementById("mensaje1").value = precio+" "+litros;
 }
 function lav500ml(){
