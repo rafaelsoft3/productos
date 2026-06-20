@@ -16,7 +16,7 @@ function fun1(){
     document.querySelector("#pmostrar").innerHTML="LAVANDINA_$"+ precio +"="+litros+"ml_";
     
   
-    document.getElementById("input-actor").value = "LAVANDINA____$"+ precio +"="+ litros+ "ml";
+    document.getElementById("input-actor").value = "LAVANDINA_____$"+ precio +"="+ litros+ "ml";
     document.getElementById("mensaje1").value = precio+" "+litros;
 }
 function lav500(){
@@ -33,6 +33,15 @@ function lav2000(){
 }
 function lav2500(){
     document.getElementById("preciolav").value = "2500";
+}
+function lav3000(){
+    document.getElementById("preciolav").value = "3000";
+}
+function lav3500(){
+    document.getElementById("preciolav").value = "3500";
+}
+function lav4000(){
+    document.getElementById("preciolav").value = "4000";
 }
 //calculadoraja
 function lav1(){
@@ -86,7 +95,7 @@ function fun12(){
     document.querySelector("#pmostrar").innerHTML="LAVANDINA $"+ precio +" x "+litros;
     
   
-    document.getElementById("input-actor").value = "LAVANDINA____"+ litros +"ml=$"+ precio;
+    document.getElementById("input-actor").value = "LAVANDINA__$"+ precio +"="+ litros+"ml";
     document.getElementById("mensaje1").value = precio+" "+litros;
 }
 function lav500ml(){
@@ -103,6 +112,15 @@ function lav2000ml(){
 }
 function lav2500ml(){
     document.getElementById("litrolav1").value = "2500";
+}
+function lav3000ml(){
+    document.getElementById("litrolav1").value = "3000";
+}
+function lav4000ml(){
+    document.getElementById("litrolav1").value = "4000";
+}
+function lav5000ml(){
+    document.getElementById("litrolav1").value = "5000";
 }
 
 //calculadoraja
@@ -174,6 +192,15 @@ function det2000(){
 function det2500(){
     document.getElementById("preciodet").value = "2500";
 }
+function det3000(){
+    document.getElementById("preciodet").value = "3000";
+}
+function det3500(){
+    document.getElementById("preciodet").value = "3500";
+}
+function det4000(){
+    document.getElementById("preciodet").value = "4000";
+}
 function det1(){
     document.getElementById("preciodet").value += "1";
 }
@@ -236,6 +263,15 @@ function det2000ml(){
 }
 function det2500ml(){
     document.getElementById("litrodet1").value = "2500";
+}
+function det3000ml(){
+    document.getElementById("litrodet1").value = "3000";
+}
+function det4000ml(){
+    document.getElementById("litrodet1").value = "4000";
+}
+function det5000ml(){
+    document.getElementById("litrodet1").value = "5000";
 }
 function det1ml(){
     document.getElementById("litrodet1").value += "1";
@@ -664,10 +700,10 @@ function fun6(){
     let litros = document.querySelector("#litrodese").value;
 
     
-    document.querySelector("#pmostrar").innerHTML="DESENGRASANTE_$"+ precio +"="+litros+ "ml";
+    document.querySelector("#pmostrar").innerHTML="DESENGRASANTE$"+ precio +"="+litros+ "ml";
     
   
-    document.getElementById("input-actor").value = "DESENGRASANTE____$"+ precio +"="+ litros+"ml";
+    document.getElementById("input-actor").value = "DESENGRASANTE$"+ precio +"="+ litros+"ml";
     document.getElementById("mensaje1").value = precio+" "+litros;
 }
 function dese500(){
@@ -732,7 +768,7 @@ function fun61(){
    // document.querySelector("#amigo2").innerHTML="desengrasante "+ litros +"ml son $"+precio;
 
   
-    document.getElementById("input-actor").value = "DESENGRASANTE____"+ litros+"ml=$"+ precio;
+    document.getElementById("input-actor").value = "DESENGRASANTE"+ litros+"ml=$"+ precio;
     document.getElementById("mensaje1").value = precio+" "+litros;
 }
 function dese500ml(){
@@ -1029,3 +1065,75 @@ function ocultarbox(){
     //lav1.style.top= '0px';
     //lav2.style.top= '0px';
 }
+
+function mostrarbox2() {
+    // Selecciona el elemento flotante por su ID
+    var flotante2 = document.getElementById('box2');
+    
+    // Lo oculta completamente de la pantalla
+    
+    flotante2.style.display = 'block';
+    flotante2.style.transform = 'translateY(20px)';
+    
+}
+function ocultarbox2(){
+      // Selecciona el elemento flotante por su ID
+    var flotante2 = document.getElementById('box2');
+   flotante2.style.display = 'none';
+   flotante2.style.transform = 'translateY(20px)';
+    
+    // Lo oculta completamente de la pantalla
+   // flotante1.style.top = '00px';
+    //lav1.style.top= '0px';
+    //lav2.style.top= '0px';
+}
+
+ // Selección de elementos del DOM
+        const videoFlotante = document.getElementById('videoFlotante');
+        const iframeYoutube = document.getElementById('iframeYoutube');
+        const btnAbrir = document.getElementById('btnAbrir');
+        const btnCerrar = document.getElementById('btnCerrar');
+
+        // FUNCIONES DECLARADAS
+
+        function abrirYReproducir() {
+            // 1. Mostrar el contenedor flotante con transición suave
+            videoFlotante.style.display = 'block';
+            setTimeout(() => {
+                videoFlotante.classList.remove('oculto');
+            }, 10);
+
+            // 2. Ordenar a la API de YouTube que inicie el video con sonido
+            if (iframeYoutube.contentWindow) {
+                
+                iframeYoutube.contentWindow.postMessage(
+                    '{"event":"command","func":"playVideo","args":""}', 
+                    '*'
+                );
+            }
+        }
+
+        function cerrarYPausar() {
+            // 1. Ocultar visualmente aplicando la animación CSS
+            videoFlotante.classList.add('oculto');
+            
+            
+            // 2. Esperar a que termine la transición antes de cambiar el display a none
+            setTimeout(() => {
+               
+                videoFlotante.style.display = 'none';
+            }, 300);
+
+            // 3. Ordenar a la API de YouTube que pause el video inmediatamente
+            if (iframeYoutube.contentWindow) {
+                iframeYoutube.contentWindow.postMessage(
+                    '{"event":"command","func":"pauseVideo","args":""}', 
+                    '*'
+                );
+            }
+        }
+
+        // ASIGNACIÓN DE LOS LISTENERS
+        btnAbrir.addEventListener('click', abrirYReproducir());
+        btnCerrar.addEventListener('click', cerrarYPausar); 
+    

@@ -46,7 +46,7 @@
     
     
         <div class="litros2">
-        <h2>litros</h2>
+        <h2>1litro = 1000ml x $600</h2>
         <input type="number" id="litrolav1" class="input2" placeholder=""> 
         </div>
 
@@ -57,13 +57,18 @@
         
    
         <div id="contiene">
-        <button onclick="lav500ml()">500ml</button>
-        <button onclick="lav1000ml()">1000ml</button>
-        <button onclick="lav1500ml()">1500ml</button>
+        <button class="btnAbrir1" onclick="lav500ml()">500ml</button>
+        <button class="btnAbrir1" onclick="lav1000ml()">1L</button>
+        <button class="btnAbrir1" onclick="lav1500ml()">1.5L</button>
+        <button class="btnAbrir1" onclick="lav2000ml()">2L</button>
         </div>
-        <button onclick="lav2000ml()">2000ml</button>
-        <button onclick="lav2500ml()">2500ml</button>
-
+        <br>
+        <div>
+        <button class="btnAbrir1" onclick="lav2500ml()">2.5L</button>
+        <button class="btnAbrir1" onclick="lav3000ml()">3L</button>
+        <button class="btnAbrir1" onclick="lav4000ml()">4L</button>
+        <button class="btnAbrir1" onclick="lav5000ml()">5L</button>
+        </div>
         <div>
         <button onclick="lav1ml()" class="num">1</button>
         <button onclick="lav2ml()" class="num">2</button>
@@ -114,15 +119,21 @@
         <!--<div class="total">
         <button  id="btn-mostrar" type="submit">TOTAL</button>
         </div>-->
-        <div style="width:185px">
-        <button onclick="lav500()">$500</button>
-        <button onclick="lav1000()">$1000</button>
-        <button onclick="lav1500()">$1500</button>
-        </div>
         <div>
-        <button onclick="lav2000()">$2000</button>
-        <button onclick="lav2500()">$2500</button>
+        <button class="btnAbrir1" onclick="lav500()">$500</button>
+        <button class="btnAbrir1" onclick="lav1000()">$1000</button>
+        <button class="btnAbrir1" onclick="lav1500()">$1500</button>
+         <button class="btnAbrir1" onclick="lav2000()">$2000</button>
         </div>
+        <br>
+        <div>
+       
+        <button class="btnAbrir1" onclick="lav2500()">$2500</button>
+         <button class="btnAbrir1" onclick="lav3000()">$3000</button>
+        <button class="btnAbrir1" onclick="lav3500()">$3500</button>
+         <button class="btnAbrir1" onclick="lav4000()">$4000</button>
+        
+    </div>
         <div>
         <button onclick="lav1()" class="num">1</button>
         <button onclick="lav2()" class="num">2</button>
@@ -184,13 +195,13 @@
 
     <div id="detergente1" class="detergente">
         <div class="titul">
-        <h2>COMPRAR DETERGENTE POR:</h2>
+        <h2>DETERGENTE</h2>
         </div>
 
         <div class="contiene">
     
         <div class="precio">
-        <h2>precio</h2>
+        <h2>precio = $800 x 1000ml</h2>
         <input type="number" id="preciodet" class="input2" placeholder=""> 
         </div>
         <div class="litros">
@@ -200,13 +211,19 @@
 
         </div>
         <div >
-        <button onclick="det500()">$500</button>
-        <button onclick="det1000()">$1000</button>
-        <button onclick="det1500()">$1500</button>
+        <button class="btnAbrir1" onclick="det500()">$500</button>
+        <button class="btnAbrir1" onclick="det1000()">$1000</button>
+        <button class="btnAbrir1" onclick="det1500()">$1500</button>
+        <button class="btnAbrir1" onclick="det2000()">$2000</button>
         </div>
-        <button onclick="det2000()">$2000</button>
-        <button onclick="det2500()">$2500</button>
-
+        <br>
+        <div>
+        <button class="btnAbrir1" onclick="det2500()">$2500</button>
+        <button class="btnAbrir1" onclick="det3000()">$3000</button>
+        <button class="btnAbrir1" onclick="det3500()">$3500</button>
+        <button class="btnAbrir1" onclick="det4000()">$4000</button>
+       
+        </div>
         <div>
         <button onclick="det1()" class="num">1</button>
         <button onclick="det2()" class="num">2</button>
@@ -239,12 +256,12 @@
     <div id="detergente2" class="detergente">
         
         <div class="titul">
-        <h2>COMPRAR DETERGENTE POR:</h2>
+        <h2>DETERGENTE</h2>
         </div>
 
         <div class="contiene">    
         <div class="litros2">
-        <h2>litros</h2>
+        <h2>1litro = 1000ml x $800</h2>
         <input type="number" id="litrodet1" class="input2" placeholder=""> 
         </div>
 
@@ -260,10 +277,15 @@
         <button onclick="det500ml()">500ml</button>
         <button onclick="det1000ml()">1000ml</button>
         <button onclick="det1500ml()">1500ml</button>
-        </div>
         <button onclick="det2000ml()">2000ml</button>
+        </div>
+        <br>
+        <div>
         <button onclick="det2500ml()">2500ml</button>
-
+        <button onclick="det3000ml()">3000ml</button>
+        <button onclick="det4000ml()">4000ml</button>
+        <button onclick="det5000ml()">5000ml</button>
+        </div>
         <div>
         <button onclick="det1ml()" class="num">1</button>
         <button onclick="det2ml()" class="num">2</button>
@@ -841,6 +863,22 @@
     <a href="#desengrasante" onclick="ocultarFlotante()"  class="original-button">DESENGRASANTE</a>
             </div>
             </div>
+            
+        <main>
+        <h1></h1>
+        <p>Haz clic en el botón de abajo para<br> 
+            desplegar el video instructivo</p>
+        
+        <button class="btnAbrir"  onclick="mostrarbox2()">Ver Instructivo</button>
+    </main>
+
+    <div id="box2" class="box3">
+        <button id="btnCerrar" onclick="ocultarbox2()" class="btn-cerrar">&times;</button>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EDqCNp5Udpg" enablejsapi="1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+         <!--<script src="prue.js">
+    
+    </script>-->
 </div>
  </div>
     <!--array.whatsapp-->

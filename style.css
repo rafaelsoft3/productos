@@ -32,8 +32,44 @@
     position: fixed;
  /*bottom: 0; /* Se fijará en la parte superior del viewport */
   z-index: 1; /* Asegura que quede por encima del contenido */
-  
 }
+.box2{
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    position: fixed;
+ /*bottom: 0; /* Se fijará en la parte superior del viewport */
+  z-index: 1; /* Asegura que quede por encima del contenido */
+
+}
+
+
+.box3{
+    
+    
+    background-color: aqua;
+    
+ /*bottom: 0; /* Se fijará en la parte superior del viewport */
+  z-index: 1; /* Asegura que quede por encima del contenido */
+    display: none;
+            opacity: 1;
+            transform: translateY(20px);
+            float:left;
+            position: relative;
+            
+            bottom: 380px;
+            right: 20px;
+            width: 246px;
+            height: 480px;
+            background-color: #000;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            z-index: 99;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        
+            
+}
+
 .fin{
     padding-top: 330px;
 }
@@ -172,3 +208,71 @@ html, body {
     width: 70px;
     height: 70px;
 }
+
+.btnAbrir {
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s;
+        }
+        #btnAbrir:hover {
+        background-color: #0056b3;
+        }
+
+        .btnAbrir1 {
+            padding: 4px 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s;
+        }
+
+        /* --- ESTILOS DEL CONTENEDOR FLOTANTE --- */
+        
+
+        .box3 iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            border: none;
+        }
+
+        /* Botón de cerrar (X) */
+        .btn-cerrar {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 26px;
+            height: 26px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            line-height: 22px;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .btn-cerrar:hover {
+            background-color: #ff1a1a;
+        }
+
+        /* Clase para ocultar con animación */
+        .oculto {
+            display: block;
+            opacity: 1;
+            transform: translateY(20px);
+        }

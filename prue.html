@@ -1,23 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
+   <!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Video Instructivo Flotante</title>
+    
+    <style>
+        /* --- ESTILOS GENERALES DE LA PÁGINA --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #btnAbrir {
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s;
+        }
+
+        #btnAbrir:hover {
+            background-color: #0056b3;
+        }
+
+        /* --- ESTILOS DEL CONTENEDOR FLOTANTE --- */
+        .video-container {
+            position: relative;
+            bottom: 230px;
+            right: 20px;
+            width: 246px;
+            height: 480px;
+            background-color: #000;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            z-index: 9999;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            border: none;
+        }
+
+        /* Botón de cerrar (X) */
+        .btn-cerrar {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 26px;
+            height: 26px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            line-height: 22px;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .btn-cerrar:hover {
+            background-color: #ff1a1a;
+        }
+
+        /* Clase para ocultar con animación */
+        .oculto {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
 </head>
 <body>
-<input id="miInput">
-<button id="btnAgregar">1</button>
 
-<button id="">2</button>
+    <main>
+        <h1>Bienvenido a la Guía del Sitio</h1>
+        <p>Haz clic en el botón de abajo para desplegar el video instructivo de manera flotante.</p>
+        
+        <button id="btnAbrir">Ver Instructivo</button>
+    </main>
 
-    <div id="listaBotones">
+    <div id="box2" class="video-container oculto">
+        <button id="btnCerrar" class="btn-cerrar">&times;</button>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EDqCNp5Udpg?enablejsapi=1" enablejsapi="1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
-        <h1 id="res"></h1>
+    <script>
+        // Selección de elementos del DOM
+        const videoFlotante = document.getElementById('videoFlotante');
+        const iframeYoutube = document.getElementById('iframeYoutube');
+        const btnAbrir = document.getElementById('btnAbrir');
+        const btnCerrar = document.getElementById('btnCerrar');
 
- 
-</div>   
-    
+        // FUNCIONES DECLARADAS
+
+        function abrirYReproducir() {
+            // 1. Mostrar el contenedor flotante con transición suave
+            videoFlotante.style.display = 'block';
+            setTimeout(() => {
+                videoFlotante.classList.remove('oculto');
+            }, 10);
+
+            // 2. Ordenar a la API de YouTube que inicie el video con sonido
+            if (iframeYoutube.contentWindow) {
+                
+                iframeYoutube.contentWindow.postMessage(
+                    '{"event":"command","func":"playVideo","args":""}', 
+                    '*'
+                );
+            }
+        }
+
+        function cerrarYPausar() {
+            // 1. Ocultar visualmente aplicando la animación CSS
+            videoFlotante.classList.add('oculto');
+            
+            
+            // 2. Esperar a que termine la transición antes de cambiar el display a none
+            setTimeout(() => {
+               
+                videoFlotante.style.display = 'none';
+            }, 300);
+
+            // 3. Ordenar a la API de YouTube que pause el video inmediatamente
+            if (iframeYoutube.contentWindow) {
+                iframeYoutube.contentWindow.postMessage(
+                    '{"event":"command","func":"pauseVideo","args":""}', 
+                    '*'
+                );
+            }
+        }
+
+        // ASIGNACIÓN DE LOS LISTENERS
+        btnAbrir.addEventListener('click', abrirYReproducir);
+        btnCerrar.addEventListener('click', cerrarYPausar);
+    </script>
 </body>
-<script src="prue.js"></script>
 </html>
