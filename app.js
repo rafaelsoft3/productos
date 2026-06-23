@@ -338,6 +338,16 @@ function des2000(){
 function des2500(){
     document.getElementById("preciodes").value = "2500";
 }
+function des3000(){
+    document.getElementById("preciodes").value = "3000";
+}
+function des3500(){
+    document.getElementById("preciodes").value = "3500";
+}
+function des4000(){
+    document.getElementById("preciodes").value = "4000";
+}
+
 function des1(){
     document.getElementById("preciodes").value += "1";
 }
@@ -400,6 +410,15 @@ function des2000ml(){
 }
 function des2500ml(){
     document.getElementById("litrodes1").value = "2500";
+}
+function des3000ml(){
+    document.getElementById("litrodes1").value = "3000";
+}
+function des4000ml(){
+    document.getElementById("litrodes1").value = "4000";
+}
+function des5000ml(){
+    document.getElementById("litrodes1").value = "5000";
 }
 function des1ml(){
     document.getElementById("litrodes1").value += "1";
@@ -466,6 +485,15 @@ function jab2000(){
 function jab2500(){
     document.getElementById("preciojab").value = "2500";
 }
+function jab3000(){
+    document.getElementById("preciojab").value = "3000";
+}
+function jab3500(){
+    document.getElementById("preciojab").value = "3500";
+}
+function jab4000(){
+    document.getElementById("preciojab").value = "4000";
+}
 function jab1(){
     document.getElementById("preciojab").value += "1";
 }
@@ -529,6 +557,15 @@ function jab2000ml(){
 }
 function jab2500ml(){
     document.getElementById("litrojab1").value = "2500";
+}
+function jab3000ml(){
+    document.getElementById("litrojab1").value = "3000";
+}
+function jab4000ml(){
+    document.getElementById("litrojab1").value = "4000";
+}
+function jab5000ml(){
+    document.getElementById("litrojab1").value = "5000";
 }
 function jab1ml(){
     document.getElementById("litrojab1").value += "1";
@@ -594,6 +631,15 @@ function sua2000(){
 function sua2500(){
     document.getElementById("preciosua").value = "2500";
 }
+function sua3000(){
+    document.getElementById("preciosua").value = "3000";
+}
+function sua3500(){
+    document.getElementById("preciosua").value = "3500";
+}
+function sua4000(){
+    document.getElementById("preciosua").value = "4000";
+}
 function sua1(){
     document.getElementById("preciosua").value += "1";
 }
@@ -656,6 +702,15 @@ function sua2000ml(){
 }
 function sua2500ml(){
     document.getElementById("litrosua1").value = "2500";
+}
+function sua3000ml(){
+    document.getElementById("litrosua1").value = "3000";
+}
+function sua4000ml(){
+    document.getElementById("litrosua1").value = "4000";
+}
+function sua5000ml(){
+    document.getElementById("litrosua1").value = "5000";
 }
 function sua1ml(){
     document.getElementById("litrosua1").value += "1";
@@ -721,6 +776,15 @@ function dese2000(){
 function dese2500(){
     document.getElementById("preciodese").value = "2500";
 }
+function dese3000(){
+    document.getElementById("preciodese").value = "3000";
+}
+function dese3500(){
+    document.getElementById("preciodese").value = "3500";
+}
+function dese4000(){
+    document.getElementById("preciodese").value = "4000";
+}
 function dese1(){
     document.getElementById("preciodese").value += "1";
 }
@@ -785,6 +849,15 @@ function dese2000ml(){
 }
 function dese2500ml(){
     document.getElementById("litrodese1").value = "2500";
+}
+function dese3000ml(){
+    document.getElementById("litrodese1").value = "3000";
+}
+function dese4000ml(){
+    document.getElementById("litrodese1").value = "4000";
+}
+function dese5000ml(){
+    document.getElementById("litrodese1").value = "5000";
 }
 function dese1ml(){
     document.getElementById("litrodese1").value += "1";
